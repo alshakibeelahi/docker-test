@@ -7,10 +7,13 @@ services:
     depends_on:
       - mongo
     environment:
-      - IP=localhost
       - PORT=10000
 
   mongo:
     image: mongo
     ports:
       - '27017:27017'
+    volumes:
+      - ./data:/data/db
+volumes:
+  docker-test:
